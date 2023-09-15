@@ -1,0 +1,25 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+//Escreva um programa que receba uma string e remova todos os espaços em branco.
+// Informe ao usuário o resultado.
+
+func main() {
+	var frase string
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Print("Digite seu nome completo")
+	scanner.Scan()
+	frase = scanner.Text()
+
+	if strings.Contains(frase, " ") {
+		frase2 := strings.ReplaceAll(frase, " ", "")
+		fmt.Println(frase2)
+	}
+}
