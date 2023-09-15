@@ -19,11 +19,12 @@ func main() {
 	frase = scanner.Text()
 
 	for i := 0; i < len(frase); i++ {
-		if frase[i] == 8 {
-			return
-		}
+
 		frase2 := frase[i] - 32
+
+		if frase[i] == 040 {
+			frase2 = frase[i] + 32 - 32
+		}
 		fmt.Print(string(frase2))
 	}
-
 }
