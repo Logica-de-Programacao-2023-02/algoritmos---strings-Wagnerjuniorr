@@ -1,0 +1,27 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+//Escreva um programa que receba uma string
+//conte quantas palavras ela contém.
+//Informe ao usuário o resultado.
+
+func main() {
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Me fale uma frase qualquer")
+	scanner.Scan()
+	frase := scanner.Text()
+
+	x := 0
+	for i := 0; i < len(frase); i++ {
+		if frase[i] == 040 {
+			x++
+		}
+	}
+	fmt.Println("A frase tem", x+1, "palavras")
+}
