@@ -1,0 +1,33 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
+//Solicite ao usuário uma string e informe se ela contém pelo menos um número.
+
+func main() {
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite uma frase")
+	scanner.Scan()
+	frase := scanner.Text()
+
+	var x bool = false
+	for i := 0; i < 10; i++ {
+		if strings.Contains(frase, strconv.Itoa(i)) {
+			fmt.Println("A frase tem um número")
+			x = true
+			break
+		}
+
+	}
+	if x != true {
+		fmt.Println("A frase não tem número")
+	}
+
+}
