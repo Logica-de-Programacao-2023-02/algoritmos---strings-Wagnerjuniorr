@@ -1,0 +1,40 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+//Solicite ao usuário uma string
+//informe se ela é está em camelCase e quantas palavras possuí.
+//CamelCase é quando a primeira letra de cada palavra é maiúscula,
+//e as demais são minúsculas.
+//Exemplo: "EstaStringEstaEmCamelCase".
+
+func main() {
+	var x, y int
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite uma frase")
+	scanner.Scan()
+	frase := scanner.Text()
+
+	for i := 0; i < len(frase); i++ {
+		if frase[i] > 65 && frase[i] < 90 {
+			x++
+		}
+
+	}
+	y = 1
+	for i := 0; i < len(frase); i++ {
+		if frase[i] == 32 {
+			y++
+		}
+	}
+	if x == y {
+		fmt.Printf("A frase %s está em CamelCase", frase)
+	} else {
+		fmt.Printf("A frase %s não está em CamelCase", frase)
+	}
+}
