@@ -1,0 +1,24 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+//Solicite ao usuário uma string e substitua todas as vogais por '*' (asterisco).
+
+func main() {
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite uma frase:")
+	scanner.Scan()
+	frase := scanner.Text()
+	frase2 := "aeiou"
+
+	for i := 0; i < len(frase); i++ {
+		frase = strings.ReplaceAll(frase, string(frase2[i]), "*")
+	}
+	fmt.Println("A sua frase com a substituição das vogais ficará:", frase)
+}
