@@ -1,0 +1,27 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+//Solicite ao usuário uma string
+//informe se ela é uma sequência numérica crescente (exemplo: "123" ou "4567").
+
+func main() {
+
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite uma ordem númerica:")
+	scanner.Scan()
+	ordem := scanner.Text()
+	ordem2 := "0123456789"
+
+	if strings.Contains(ordem2, ordem) {
+		fmt.Println("A string está em ordem númerica")
+	} else {
+		fmt.Println("A string não está tem ordem númerica")
+	}
+}
