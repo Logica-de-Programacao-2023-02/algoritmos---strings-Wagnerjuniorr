@@ -1,0 +1,26 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+)
+
+//Solicite ao usuário uma string e informe se ela contém somente números (0 a 9).
+
+func main() {
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite um uma frase com números")
+	scanner.Scan()
+	frase := scanner.Text()
+
+	i, err := strconv.Atoi(frase)
+	if err != nil {
+		fmt.Printf("A frase %s não tem apenas números", frase)
+
+	} else {
+		fmt.Printf("A frase %d tem apenas números", i)
+	}
+}
