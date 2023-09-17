@@ -1,0 +1,27 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+//Solicite ao usuário uma string
+//informe se ela é uma sequência numérica decrescente (exemplo: "987" ou "54321").
+
+func main()  {
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite uma ordem de números")
+	scanner.Scan()
+	dec := scanner.Text()
+
+	dec2 := "9876543210"
+
+	if strings.Contains(dec2, dec){
+		fmt.Println("A ordem númerica está está em decrescente")
+	} else {
+		fmt.Println("A ordem númerica não está em decrescente")
+	}
+}
