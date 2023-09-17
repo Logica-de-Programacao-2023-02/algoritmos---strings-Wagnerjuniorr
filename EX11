@@ -1,0 +1,31 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+//Escreva um programa que receba uma string e remova todas as vogais.
+//Informe ao usuário o resultado.
+
+func main() {
+	var frase2 string
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite uma frase:")
+	scanner.Scan()
+	frase := scanner.Text()
+
+	vogais := "aeiou"
+
+	for i := 0; i < len(vogais); i++ {
+		if strings.Contains(frase, string(vogais[i])) {
+
+			frase2 = strings.ReplaceAll(frase, string(vogais[i]), "")
+		}
+
+	}
+	fmt.Println(frase2)
+}
