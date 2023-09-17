@@ -1,0 +1,31 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+//Escreva um programa que receba uma string e verifique se ela é um palíndromo.
+//Informe ao usuário se é ou não.
+
+func main() {
+	var frase2 string
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Digite uma palavra")
+	scanner.Scan()
+	frase := scanner.Text()
+
+	for i := len(frase); i >= 0; i-- {
+		for l := 0; l < len(frase); l++ {
+			frase2 = strings.ReplaceAll(frase, string(frase[i]), string(frase[l]))
+		}
+	}
+	if frase2 != frase {
+		fmt.Println("A palavra não é um palíndromo")
+	} else if frase2 == frase2 {
+		fmt.Println("A palavra é um palíndromo")
+	}
+}
