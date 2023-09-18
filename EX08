@@ -1,26 +1,19 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
+import "fmt"
 
 //Escreva um programa que receba uma string e inverta a ordem dos caracteres.
 //Informe ao usuário o resultado.
 
 func main() {
-	var frase2, frase string
-	var i int
-	scanner := bufio.NewScanner(os.Stdin)
+	var x string
+	fmt.Println("Digite uma string")
+	fmt.Scan(&x)
 
-	fmt.Println("Digite uma frase qualquer")
-	scanner.Scan()
-	frase = scanner.Text()
+	var reverse string
 
-	for i = len(frase); i >= 0; i-- {
-		frase[i] = frase2[i]
-
+	for i := len(x) - 1; i >= 0; i-- {
+		reverse += string((x[i]))
 	}
-	fmt.Println("A sua frase invertida ficará:", frase2)
+	fmt.Println(reverse)
 }
