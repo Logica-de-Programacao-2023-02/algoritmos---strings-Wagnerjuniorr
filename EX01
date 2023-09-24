@@ -14,7 +14,7 @@ func main() {
 	var frase string
 	scanner := bufio.NewScanner(os.Stdin)
 
-	fmt.Println("Digite uma frase apena com letras minúsculas")
+	fmt.Println("Digite uma frase apenas com letras minúsculas")
 	scanner.Scan()
 	frase = scanner.Text()
 
